@@ -113,7 +113,22 @@ let phrases = [
   "funny as a monkey",
   "cunning as a fox",
   "snug as a bug in a rug",
-  "strong as an ox"
+  "strong as an ox",
+  "live long and prosper",
+  "may the force be with you",
+  "carpe diem",
+  "elementary my dear Watson",
+  "my precious",
+  "keep it secret keep it safe",
+  "ET phone home",
+  "shaken not stirred",
+  "just keep swimming",
+  "hasta la vista baby",
+  "It was beauty killed the beast",
+  "nobody puts baby in a corner",
+  "snap out of it",
+  "you had me at hello",
+  "to infinity and beyond"
 ];
 
 // collection of message to display when someone wins the game
