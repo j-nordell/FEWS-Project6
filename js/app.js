@@ -8,6 +8,7 @@ const keyboard = document.getElementById("qwerty");
 const phraseDisplay = document.getElementById("phrase").getElementsByTagName("ul")[0];
 const startButton = document.getElementsByClassName("btn__reset")[0];
 const overlay = document.getElementById("overlay");
+
 let missed = 0;
 let usedPhrases = [];
 let lastPhrase = '';
