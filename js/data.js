@@ -107,7 +107,13 @@ let phrases = [
   "just peachy",
   "right as rain",
   "on cloud nine",
-  "back to the drawing board"
+  "back to the drawing board",
+  "brave as lions",
+  "red like a rose",
+  "funny as a monkey",
+  "cunning as a fox",
+  "snug as a bug in a rug",
+  "strong as an ox"
 ];
 
 // collection of message to display when someone wins the game
@@ -137,7 +143,9 @@ const winningMessages = [
   "First-rate",
   "Second to none",
   "Congratulations",
-  "Phenomenal"
+  "Phenomenal",
+  "Incredible",
+  "You rock"
 ];
 
 // collection of messages to display when someone loses the game
