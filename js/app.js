@@ -56,7 +56,7 @@ document.addEventListener("keydown", (e) => {
   } else if(allowedLetters.includes(letter)) {  // if the key was pressed was a valid letter
     let keys = keyboard.getElementsByTagName("button");
     for(let key of keys) {
-      if(key.innerText == e.key) {  // if the phrase contains that letter
+      if(key.innerText == e.key) {  
         key.click();
       }
     }
