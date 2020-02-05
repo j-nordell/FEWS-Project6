@@ -7,6 +7,13 @@ let phrases = [
   "you lucky dog",
   "storm in a teacup"
   /*
+  "not all those who wander are lost",
+  "to be or not to be",
+  "break the ice",
+  "brave new world",
+  "wild goose chase",
+  "love is blind",
+  "one fell swoop",
   "proud as a peacock",
   "keep your hat on",
   "raining cats and dogs",
