@@ -16,6 +16,7 @@ let missed = 0;
 let usedPhrases = [];
 let lastPhrase = '';
 let heartList = document.getElementById("scoreboard").getElementsByTagName("ol")[0];
+let gameStarted = false;
 
 answerDiv.appendChild(correctAnswer);
 title.parentNode.insertBefore(answerDiv, title.nextSibling);
@@ -31,14 +32,34 @@ startButton.addEventListener("click", () => {
 
 keyboard.addEventListener("click", (e) => {
   if(e.target.tagName === "BUTTON") {
-    e.target.classList.add("chosen", "flash", "animated");
+    e.target.classList.add("flash", "animated");
     e.target.disabled = true;
     let letterFound = checkLetter(e.target);
     if(!letterFound) {
       missed++;
+      e.target.classList.add("chosen");
       removeLife();
+    } else {
+      e.target.classList.add("correct");
     }
     checkWin();
+  }
+});
+
+document.addEventListener("keydown", (e) => {
+  let letter = e.key.toLowerCase();  // upper case version of the key that was pressed
+  // if the game hasn't been started (the overlay is showing) and the key that was pressed
+  // is Enter/Return click the btn__reset
+  let allowedLetters = "abcdefghijklmnopqrstuvwxyz";
+  if(e.which == 13 && !gameStarted) {
+    startButton.click();
+  } else if(allowedLetters.includes(letter)) {  // if the key was pressed was a valid letter
+    let keys = keyboard.getElementsByTagName("button");
+    for(let key of keys) {
+      if(key.innerText == e.key) {  // if the phrase contains that letter
+        key.click();
+      }
+    }
   }
 });
 
@@ -48,6 +69,7 @@ document.addEventListener("mousedown", (e) => {
 });
 
 /*================================
+
         Helper Functions
 ================================*/
 /**
@@ -149,6 +171,7 @@ function checkWin() {
  * @param {string} winOrLose will be either "win" or "lose"
  */
 function gameOver(winOrLose) {
+  gameStarted = false;
   clearHearts();
   overlay.className = '';
   overlay.style.display = '';
@@ -252,6 +275,7 @@ function resetPhrase() {
  */
 function startGame() {
   missed = 0;
+  gameStarted = true;
   addHearts();
   let phrase = getRandomPhraseAsArray(phrases);
   addPhraseToDisplay(phrase);  
