@@ -5,8 +5,7 @@ let phrases = [
   "over the moon",
   "in hot water",
   "you lucky dog",
-  "storm in a teacup"
-  /*
+  "storm in a teacup",
   "not all those who wander are lost",
   "to be or not to be",
   "break the ice",
@@ -137,7 +136,6 @@ let phrases = [
   "snap out of it",
   "you had me at hello",
   "to infinity and beyond"
-  */
 ];
 
 // collection of message to display when someone wins the game

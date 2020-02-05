@@ -148,7 +148,6 @@ function checkWin() {
  * based on whether the user won or lost
  * @param {string} winOrLose will be either "win" or "lose"
  */
-
 function gameOver(winOrLose) {
   clearHearts();
   overlay.className = '';
@@ -176,6 +175,11 @@ function gameOver(winOrLose) {
   overlay.style.background = getGradientString(winOrLose);
 }
 
+/**
+ * Function to generate an appropriate gradient randomly but based on win or loss
+ * @param {string} winOrLose string that says if it should be for a winning or losing gradient
+ * @returns {string} string holding the gradient rule
+ */
 function getGradientString(winOrLose) {
   let colorsToUse = winOrLose == "win" ? winColors : loseColors;
   let numOfColors = Math.floor(Math.random() * 4) + 2;
@@ -191,6 +195,7 @@ function getGradientString(winOrLose) {
   gradientString += `${colorSelection.join(', ')})`;
   return gradientString;
 }
+
 /**
  * Function to begin the gradient animation on the overlay
  */
