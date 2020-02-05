@@ -1,5 +1,6 @@
 /* Main styles */
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&Roboto:300');
+@import url('https://fonts.googleapis.com/css?family=Pacifico|Shadows+Into+Light&display=swap');
 
 /* Variables */
 
@@ -115,12 +116,12 @@ button {
   padding: 8px;
   margin: 50px auto;
   background: #FFFFFF;
+  color: #0777a0;
   border-radius: 5px;
   font-size: var(--font-size-medium);
 }
 
 /* Overlay */
-/* Gradient animation found throughout the project adapted from https://codepen.io/P1N2O/pen/pyBNzX by Manuel Pinto */
 #overlay {
   display: flex;
   flex-direction: column;
@@ -132,14 +133,14 @@ button {
   left: 0;
   right: 0;
   border-radius: 5px;
+  
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-	background-size: 300% 300%;
-  animation: gradient 12s ease infinite;
-
+  background-size: 400% 400%;
 }
 
 .title {
   color: #FFF;
+  font-size: 4em;
 }
 
 .start {
@@ -164,6 +165,13 @@ button {
 
 .lose a {
   color: var(--color-lose);
+}
+
+#overlay h3 {
+  width: 50%;
+  margin: 35px auto;
+  font-size: 2em;
+  font-family: 'Open Sans';
 }
 
 @keyframes gradient {
