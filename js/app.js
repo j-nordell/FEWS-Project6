@@ -70,6 +70,7 @@ function getPhrase() {
   if(phrases.length === 0) {
     phrases = usedPhrases;  
     usedPhrases = [];
+    return getPhrase();
   } else {
     // Otherwise, get a random phrase that is not equal to the last Phrase and remove it from phrases and put it in usedPhrases
     let randomIndex = getRandIndex(phrases);
@@ -163,19 +164,33 @@ function gameOver(winOrLose) {
     message = `${winningMessages[getRandIndex(winningMessages)]}!
                ${String.fromCodePoint(parseInt(emoji, 16))}`;
     h2.style.fontFamily = "Pacifico";
-    // overlay.classList.add("animated", "slideInLeft");
+    overlay.classList.add("animated", "slideInLeft");
   } else {
     let emoji = loseEmojis[getRandIndex(loseEmojis)];
     message = `${losingMessages[getRandIndex(losingMessages)]}!
                ${String.fromCodePoint(parseInt(emoji, 16))}`;
     h2.style.fontFamily = 'Shadows Into Light';
-    // overlay.classList.add("animated", "slideInRight");
+    overlay.classList.add("animated", "slideInRight");
   }
   h2.innerText = message;
-  overlay.animation = '';
-  startGradientAnimation();
+  overlay.style.background = getGradientString(winOrLose);
 }
 
+function getGradientString(winOrLose) {
+  let colorsToUse = winOrLose == "win" ? winColors : loseColors;
+  let numOfColors = Math.floor(Math.random() * 4) + 2;
+  let degrees = Math.floor(Math.random() * 90) - 45;
+  let colorSelection = [];
+
+  let gradientString = `linear-gradient(${degrees}deg, `;
+
+  for(let i = 0; i < numOfColors; i++) {
+    colorSelection.push(colorsToUse[getRandIndex(colorsToUse)]);
+  }
+
+  gradientString += `${colorSelection.join(', ')})`;
+  return gradientString;
+}
 /**
  * Function to begin the gradient animation on the overlay
  */
