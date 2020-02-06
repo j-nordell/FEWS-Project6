@@ -100,7 +100,7 @@ function getPhrase() {
       randomIndex = getRandIndex(phrases);
     }
 
-    const randomPhrase = phrases.splice(randomIndex, 1)[0];
+    const randomPhrase = phrases.splice(randomIndex, 1)[0].toLowerCase();
     usedPhrases.push(randomPhrase);
     lastPhrase = randomPhrase;
     return randomPhrase;
